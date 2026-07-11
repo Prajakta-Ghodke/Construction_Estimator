@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Estimator</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="Construction Company Website Template" name="keywords">
+        <meta content="Construction Company Website Template" name="description">
+
+        <!-- Favicon -->
+        <link href="img/favicon.ico" rel="icon">
+
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+        <!-- CSS Libraries -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <link href="lib/flaticon/font/flaticon.css" rel="stylesheet"> 
+        <link href="lib/animate/animate.min.css" rel="stylesheet">
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+        <link href="lib/slick/slick.css" rel="stylesheet">
+        <link href="lib/slick/slick-theme.css" rel="stylesheet">
+		
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <div>
+            <!-- Top Bar Start -->
+            <div class="top-bar">
+                <div class="container-fluid">
+                        <div class="col-lg-5 col-md-12">
+                            <div class="logo">
+                                <a href="index.html">
+                                    <h1>BuilderTrend</h1>
+                                    <!-- <img src="img/logo.jpg" alt="Logo"> -->
+                                </a>
+                            </div>
+                        </div>
+                        
+                    
+                </div>
+            </div>
+            <!-- Top Bar End -->
+
+            <!-- Nav Bar Start -->
+            <div class="nav-bar">
+                <div class="container-fluid">
+                    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+                        <a href="#" class="navbar-brand">MENU</a>
+                        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#collapsibleNavbar">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse justify-content-between" id="collapsibleNavbar">
+                            <div class="navbar-nav mr-auto">
+                                <a href="index.html" class="nav-item nav-link active">Home</a>
+                                <a href="about.html" class="nav-item nav-link">About</a>
+                                <a href="service.html" class="nav-item nav-link">Service</a>
+								<a href="designs.html" class="nav-item nav-link">Designs</a>
+                                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                            </div>
+							<div class="navbar-nav ms-auto">
+							<a href="login.php" class="nav-item nav-link">Login</a>
+							</div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <!-- Nav Bar End -->
+            
+            
+            <!-- Page Header Start -->
+            <div class="page-header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2>Our Estimator</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Page Header End -->
+
+
+            <!-- Service Start -->
+            <div class="estimator">
+                <div class="container">
+                    <div class="section-header text-center">
+                        <h2>Estimator</h2>
+                    </div>
+					<br>
+					<br>
+                    <br>
+					<br>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="estimator-form">
+								<div></div>
+                                <form action="#">
+									<div class="form-group">
+									<label style="color: black; font-weight: 700; font-size: 20px;">Builtup Area (Sq. Ft.) : </label>
+                                        <input type="number" class="form-control" name="area" id="builtuparea" placeholder="1000" required autocomplete="off" />
+                                        <span id="barea" class="text-danger font-weight-bold"> </span>
+                                    </div>
+                                    <div class="form-group">
+									<label style="color: black; font-weight: 700; font-size: 20px;">Cost per Sq. Ft. : </label>
+                                        <input type="number" class="form-control" name="costpsf" id="costpsqft" placeholder="1600" required autocomplete="off" />
+                                        <span id="costpersf" class="text-danger font-weight-bold"> </span>
+                                    </div>
+                                    <div>
+                                        <button class="btn btn-success" type="submit" name="submit" onClick="calculateFunction()">Calculate</button>
+										<button class="btn btn-info" type="reset" id="rst">Reset</button>
+                                    </div>
+								</form>
+                            </div>
+							<div>
+							<h3 id="result" style="margin-top: 50px; margin-bottom: 50px; color: black; font-weight: 700; font-family: times;"></h3>
+							<div class="container">
+							<table class="table table-bordered" style="background-color: #fdbe33; color: #030f27; border: 1px solid black;">
+							<thead>
+							<tr>
+							<th>Resource</th>
+							<th>Unit</th>
+							<th>Quantity</th>
+							<th>Amount</th>
+							</tr>
+							</thead>
+							<tbody>
+							<tr>
+							<td>Cement</td>
+							<td>Bag</td>
+							<td id="cquantity">400</td>
+							<td id="camount">₹262400</td>
+							</tr>
+							<tr>
+							<td>Sand</td>
+							<td>Ton</td>
+							<td id="squantity">816</td>
+							<td id="samount">₹196800</td>
+							</tr>
+							<tr>
+							<td>Aggregate</td>
+							<td>Ton</td>
+							<td id="aquantity">608</td>
+							<td id="aamount">₹118400</td>
+							</tr>
+							<tr>
+							<td>Steel</td>
+							<td>Kg</td>
+							<td id="stquantity">4000</td>
+							<td id="stamount">₹393600</td>
+							</tr>
+							<tr>
+							<td>Paint</td>
+							<td>Lt</td>
+							<td id="pquantity">180</td>
+							<td id="pamount">Included in Finishers</td>
+							</tr>
+							<tr>
+							<td>Bricks</td>
+							<td>Pc</td>
+							<td id="bquantity">8000</td>
+							<td id="bamount">Included in Finishers</td>
+							</tr>
+							<tr>
+							<td>Finishers</td>
+							<td>-</td>
+							<td id="finquantity">-</td>
+							<td id="finamount">₹264000</td>
+							</tr>
+							<tr>
+							<td>Fitting</td>
+							<td>-</td>
+							<td id="fitquantity">-</td>
+							<td id="fitamount">₹364800<br><b>Note: </b>Window(3.0% on total value), Doors(3.4% on total value), Plumbing(5.5% on total value), Electrical(6.8% on total value), Sanitary(4.1% on total value)</td>
+							</tr>
+							</tbody>
+							</table>
+							</div>
+							</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+			
+			<script>
+			function calculateFunction()
+			{
+					num1 = document.getElementById("builtuparea").value;
+					num2 = document.getElementById("costpsqft").value;
+					result = num1 * num2;
+					document.getElementById("result").innerHTML = "Approx. cost required for construction is : ₹" + num1 * num2;
+					document.getElementById("cquantity").innerHTML = Math.round(num1 * 0.4);
+					document.getElementById("camount").innerHTML ="₹" +  Math.round((16.4/100) * result);
+					document.getElementById("squantity").innerHTML = Math.round(num1 * 0.816);
+					document.getElementById("samount").innerHTML ="₹" +  Math.round((12.3/100) * result);
+					document.getElementById("aquantity").innerHTML = Math.round(num1 * 0.608);
+					document.getElementById("aamount").innerHTML ="₹" +  Math.round((7.4/100) * result);
+					document.getElementById("stquantity").innerHTML = Math.round(num1 * 4);
+					document.getElementById("stamount").innerHTML ="₹" +  Math.round((24.6/100) * result);
+					document.getElementById("pquantity").innerHTML = Math.round(num1 * 0.18);
+					document.getElementById("pamount").innerHTML = "Included in Finishers";
+					document.getElementById("bquantity").innerHTML = Math.round(num1 * 8);
+					document.getElementById("bamount").innerHTML = "Included in Finishers";
+					document.getElementById("finquantity").innerHTML = "-";
+					document.getElementById("finamount").innerHTML = "₹" +  Math.round((16.5/100) * result);
+					document.getElementById("fitquantity").innerHTML = "-";
+					document.getElementById("fitamount").innerHTML = "₹" +  Math.round((22.8/100) * result) + "<br> <b>Note:</b> Window (3.0 % on total value), Doors (3.4 % on total value), Plumbing (5.5 % on total value), Eletrical (6.8 % on total value), Sanitary (4.1 % on total value)";
+			}
+			</script>
+            <!-- Service End -->
+            
+
+
+            <!-- Footer Start -->
+            <div class="footer wow fadeIn" data-wow-delay="0.3s">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 col-lg-3">
+                            <div class="footer-link">
+                                <h2>Services Areas</h2>
+                                <a href="estimator">Construction Estimator</a>
+                                <a href="designs.html">Designs</a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                            <div class="footer-link">
+                                <h2>Useful Pages</h2>
+                                <a href="about.html">About</a>
+                                <a href="contact.html">Contact</a>
+							</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container copyright">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>&copy; <a href="index.html">BuilderTrend</a>, All Right Reserved.</p>
+                        </div>
+					</div>
+                </div>
+            </div>
+            <!-- Footer End -->
+
+            <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+        </div>
+
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="lib/isotope/isotope.pkgd.min.js"></script>
+        <script src="lib/lightbox/js/lightbox.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="lib/counterup/counterup.min.js"></script>
+        <script src="lib/slick/slick.min.js"></script>
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+    </body>
+</html>
